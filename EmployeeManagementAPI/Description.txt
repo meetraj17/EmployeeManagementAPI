@@ -1,0 +1,137 @@
+﻿# Employee Management System - ASP.NET Core Web API
+
+## 📌 Project Overview
+
+The Employee Management System is a RESTful Web API developed using ASP.NET Core. This project is designed to manage employee data efficiently while ensuring secure authentication and clean architecture practices. It provides endpoints for user authentication and employee operations such as create, read, update, and delete (CRUD).
+
+The system follows industry-standard practices like Repository Pattern, JWT-based authentication, and Entity Framework Core for database management.
+
+---
+
+## 🏗️ Architecture & Design
+
+The project is built using a layered architecture to ensure separation of concerns and maintainability:
+
+* Controllers → Handle HTTP requests and responses
+* Services → Contain business logic
+* Repository Pattern → Manage data access
+* Models → Represent database entities
+* DTOs → Handle data transfer between layers
+
+This structure improves scalability, testability, and code readability.
+
+---
+
+## 🔐 Authentication & Security
+
+The application implements secure authentication using JSON Web Tokens (JWT).
+
+Key Features:
+
+* User Registration and Login APIs
+* Password hashing using BCrypt
+* Token generation with expiry time
+* Secure endpoints using authorization middleware
+
+Passwords are never stored in plain text, ensuring data security.
+
+---
+
+## 👤 User Module
+
+The User module handles authentication and account management.
+
+Features:
+
+* Register new users
+* Login with email and password
+* Validate credentials securely
+* Generate JWT token for authorized access
+
+---
+
+## 👨‍💼 Employee Module
+
+The Employee module provides full CRUD functionality.
+
+API Endpoints:
+
+* GET /api/Employee → Retrieve all employees
+* GET /api/Employee/{id} → Retrieve employee by ID
+* POST /api/Employee → Create new employee
+* PUT /api/Employee → Update employee details
+* DELETE /api/Employee/{id} → Delete employee
+
+Each employee record includes:
+
+* Name
+* Email
+* Department
+* Mobile Number
+* City
+* Date of Birth
+* Profile Image
+
+---
+
+## 🖼️ File Upload Feature
+
+The system supports uploading employee profile images.
+
+Implementation Details:
+
+* File upload handled using IFormFile
+* Images stored in server directory (wwwroot/images)
+* Unique file names generated using GUID
+* File path stored in database
+* Old image deleted during update
+
+---
+
+## 🗄️ Database Management
+
+The project uses Entity Framework Core with Code First approach.
+
+Features:
+
+* Database schema generated from models
+* Migrations used for updating database
+* SQL Server as backend database
+
+---
+
+## 🧪 API Testing
+
+The API is tested and documented using Swagger.
+
+Features:
+
+* Interactive UI for testing endpoints
+* Supports authorization using JWT token
+* Easy request/response validation
+
+---
+
+## ⚙️ Middleware
+
+Custom middleware is implemented for handling cross-cutting concerns such as request processing and security enhancements.
+
+---
+
+## 🚀 Key Features
+
+* Clean architecture implementation
+* Secure authentication using JWT
+* Password hashing using BCrypt
+* Repository Pattern for data access
+* Full CRUD operations
+* File upload support
+* Scalable and maintainable design
+
+---
+
+## 🧠 Conclusion
+
+This project demonstrates a real-world implementation of an ASP.NET Core Web API with secure authentication, clean architecture, and efficient data handling. It is designed to be scalable, maintainable, and suitable for enterprise-level applications.
+
+---
